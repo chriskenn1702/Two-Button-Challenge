@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var messageString = ""
+    @State private var messageFont: Font = .largeTitle
     var body: some View {
         VStack {
             Spacer()
@@ -21,7 +22,7 @@ struct ContentView: View {
             Text(messageString)
                 .fontWeight(.black)
                 .foregroundColor(Color("BC-Maroon"))
-                .font(.largeTitle)
+                .font(messageFont)
                 .frame(height: 80)
                 .frame(maxWidth: .infinity)
             
@@ -34,14 +35,10 @@ struct ContentView: View {
                 Button("Great"){
                     messageString = "You Are Great!"
                 }
-                .buttonStyle(.borderedProminent)
             }
+            .buttonStyle(.borderedProminent)
+            .tint(Color("BC-Maroon"))
             
-
-            
-            
-
-         
             Spacer()
         }
         .padding()
